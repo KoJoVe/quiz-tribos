@@ -8,11 +8,11 @@
       <form name="quizform">
 
         <div class="pergunta">
-          {{perguntas[perguntaAtual].pergunta}}
+          {{perguntas[perguntaAtual].texto}}
         </div>
 
         <div class="opcao" ng-repeat="r in perguntas[perguntaAtual].respostas" ng-class="{selecionada: perguntas[perguntaAtual].selecionada == $index}" ng-click="atualizaOpcao($index)">
-          {{r.resposta}}
+          {{r.texto}}
         </div>
 
         <button ng-click="proximaPergunta()" ng-class="{selecionada: perguntas[perguntaAtual].selecionada == $index}" ng-show="perguntas[perguntaAtual].selecionada >= 0">Proxima pergunta</button>
