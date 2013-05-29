@@ -1,80 +1,7 @@
-var app = angular.module('QuizApp', ['mongolabResource'])
-
-app.constant('API_KEY', 'Mg3dX4xGqwJWmkFJz6AwaDeR8VGuD-2R');
-app.constant('DB_NAME', 'tribos-dev');
-
-app.factory('Entrada', function($mongolabResource) {
-    return $mongolabResource('entradas');
-});
-
-app.controller('QuizCtrl', function($scope, Entrada) {
-
-  $scope.perguntaAtual = 0
-  $scope.opcoesSelecionadas = [] //atualizada por updateOpcoesSelecionadas
-  $scope.triboPontos = [] //atualizada por updateTriboPontos
-  $scope.triboPorc = [] //atualizada por updatetriboPorc
-
-  $scope.atualizaOpcao = function(i){
-    $scope.perguntas[$scope.perguntaAtual].selecionada = i
-  }
-
-  $scope.proximaPergunta = function(){
-    if($scope.perguntaAtual == $scope.perguntas.length - 1){
-      $scope.fim()
-    } else {
-      $scope.perguntaAtual += 1
-    }
-  }
-
-  $scope.updateOpcoesSelecionadas = function() {
-    $scope.opcoesSelecionadas = []
-    var length = $scope.tribos.length
-    for(var i = 0; i<length; i++){
-      $scope.opcoesSelecionadas[i] = $scope.perguntas[i].selecionada
-    }
-  }
-
-  $scope.updateTriboPontos = function() {
-    //inicializa array de votos
-    $scope.triboPontos = []
-    var length = $scope.tribos.length
-    for(var i = 0; i<length; i++){
-      $scope.triboPontos[i] = 0
-    }
-
-    //adiciona votos as respostas
-    $scope.perguntas.forEach(function(pergunta) {
-      var selecionada = pergunta.selecionada
-      var valores = pergunta.respostas[selecionada].valores
-      for(var i = 0; i<length; i++){
-        $scope.triboPontos[i] += valores[i]
-      }
-    })
-  }
-
-  $scope.updateTriboPorc = function() {
-    $scope.triboPorc = []
-    var length = $scope.triboPontos.length
-    var soma = eval($scope.triboPontos.join('+'))
-
-    if(soma == 0)
-      return;
-
-    for(var i = 0; i<length; i++){
-      $scope.triboPorc[i] = $scope.triboPontos[i]*100/soma
-    }
-  }
-
-  $scope.fim = function() {
-    $scope.updateOpcoesSelecionadas()
-    $scope.updateTriboPontos()
-    $scope.updateTriboPorc()
-
-    var entrada = new Entrada({session: window.session, opcoes: $scope.opcoesSelecionadas, pontos: $scope.triboPontos, porcentagens: $scope.triboPorc})
-    entrada.saveOrUpdate()
-  }
-
-  $scope.tribos = [
+//Temos isso atuando como o banco de dados das tribos e perguntas
+//Idealmente isto estaria num banco de dados
+var data = {
+  tribos: [
     {nome: "surfista"},
     {nome: "patricinha"},
     {nome: "hippie"},
@@ -84,9 +11,8 @@ app.controller('QuizCtrl', function($scope, Entrada) {
     {nome: "funkeiro"},
     {nome: "rato de academia"},
     {nome: "skatista"},
-  ]
-
-  $scope.perguntas = [
+  ],
+  perguntas: [
     {texto: 'Minha prioridade na hora de gastar o meu dinheiro é com:', respostas: [   
       {texto: 'Roupas/meu carro,  aparência é o cartão de visitas.', valores: [0,2,0,0,0,0,0,0,0]},
       {texto: 'Jogos, claro!', valores: [0,0,0,0,2,0,0,0,0]},
@@ -179,5 +105,13 @@ app.controller('QuizCtrl', function($scope, Entrada) {
       {texto: 'Seria guardado pra eternidade.', valores: [0,0,0,0,1,1,0,0,0]},
     ]}
   ]
+}
 
-})
+
+//GET
+exports.dados = function(req, res) {
+  res.json({
+    tribos: data.tribos,
+    perguntas: data.perguntas
+  })
+}
