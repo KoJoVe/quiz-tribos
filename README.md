@@ -9,7 +9,7 @@ This is a proof-of-concept project by [Guilherme Berger](https://github.com/gber
 Este é um projeto ilustrativo feito por [Guilherme Berger](https://github.com/gberger42) e [João Vicente](https://github.com/KoJoVe), alunos da PUC-Rio. Estamos usando [AngularJS](http://angularjs.org/) para mostrar uma quiz ao usuário, que no fim mostra a que "tribo urbana" o usuário pertence, baseado em suas respostas. Ao terminar o quiz, as respotas do usuário, assim como seu [session.js](https://github.com/codejoust/session.js) dump, são enviados para um banco de dados NoSQL [MongoDB](http://www.mongodb.org/) hospedado no [MongoLab](https://mongolab.com/home). Mais tarde, os resultados adquiridos podem ser usados para analises estatísticas.
 
 ##ToDo
-- [x] Separar em views
+- [ ] Separar em views
 - [ ] Implementar design
 - [ ] Envolver o MongoLab em NodeJS 
 - [ ] Envolver Perguntas e Tribos em Factory
