@@ -1,6 +1,16 @@
-function QuizCtrl($scope){
+var app = angular.module('QuizApp', ['mongolabResource'])
+
+app.constant('API_KEY', 'Mg3dX4xGqwJWmkFJz6AwaDeR8VGuD-2R');
+app.constant('DB_NAME', 'tribos-dev');
+
+app.factory('Entrada', function($mongolabResource) {
+    return $mongolabResource('entradas');
+});
+
+app.controller('QuizCtrl', function($scope, Entrada) {
 
   $scope.perguntaAtual = 0
+  $scope.opcoesSelecionadas = [] //atualizada por updateOpcoesSelecionadas
   $scope.triboVotos = [] //atualizada por updateTriboVotos
   $scope.triboPorc = [] //atualizada por updatetriboPorc
 
@@ -13,6 +23,14 @@ function QuizCtrl($scope){
       $scope.fim()
     } else {
       $scope.perguntaAtual += 1
+    }
+  }
+
+  $scope.updateOpcoesSelecionadas = function() {
+    $scope.opcoesSelecionadas = []
+    var length = $scope.tribos.length
+    for(var i = 0; i<length; i++){
+      $scope.opcoesSelecionadas[i] = $scope.perguntas[i].selecionada
     }
   }
 
@@ -48,10 +66,12 @@ function QuizCtrl($scope){
   }
 
   $scope.fim = function() {
+    $scope.updateOpcoesSelecionadas()
     $scope.updateTriboVotos()
     $scope.updateTriboPorc()
 
-    alert(JSON.stringify($scope.triboPorc))
+    var entrada = new Entrada({session: window.session, opcoes: $scope.opcoesSelecionadas, pontos: $scope.triboVotos, porcentagens: $scope.triboPorc})
+    entrada.saveOrUpdate()
   }
 
   $scope.tribos = [
@@ -160,4 +180,4 @@ function QuizCtrl($scope){
     ]}
   ]
 
-}
+})
