@@ -1,23 +1,32 @@
-.opcao{
-  	max-width: 500px;
-  	max-height: 100px;
-  	border: 1px solid black;
-  	margin: 0 20px 20px 0;
-  	cursor: pointer;
+body {
+  font-family: "Comic Sans MS";
+  background: cyan;
 }
 
-.selecionada{
-  	background-color: ddd;
+.quizCaixa  {
+  position: relative;
+  top: 100px;
+  width: 700px;
+  max-height: 700px;
+  margin: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.opcao {
+  max-width: 500px;
+  max-height: 100px;
+  border: 1px solid black;
+  margin: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+.selecionada {
+  background-color: ddd;
 }
 
 .pergunta {
-	margin-bottom: 10px;
-}
-.quizCaixa {
-	position: relative;
-	top: 100px;
-	width: 700px;
-	max-height: 700px;
-	background: blue;
-	margin: auto;
+  margin-bottom: 10px;
 }

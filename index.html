@@ -8,18 +8,19 @@
       <form name="quizform">
 
         <div class="pergunta">
-          {{quiz[perguntaAtual].pergunta}}
+          {{perguntas[perguntaAtual].pergunta}}
         </div>
 
-        <div class="opcao" ng-repeat="r in quiz[perguntaAtual].respostas" ng-class="{selecionada: quiz[perguntaAtual].selecionada == $index}" ng-click="atualizaOpcao($index)">
+        <div class="opcao" ng-repeat="r in perguntas[perguntaAtual].respostas" ng-class="{selecionada: perguntas[perguntaAtual].selecionada == $index}" ng-click="atualizaOpcao($index)">
           {{r.resposta}}
         </div>
 
-        <button ng-click="proximaPergunta()" ng-class="{selecionada: quiz[perguntaAtual].selecionada == $index}" >proxima</button>
+        <button ng-click="proximaPergunta()" ng-class="{selecionada: perguntas[perguntaAtual].selecionada == $index}" ng-show="perguntas[perguntaAtual].selecionada >= 0">Proxima pergunta</button>
 
       </form>
-      </div>
-    <script src="lib/angular/angular.js"></script>
+    </div>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/session/session.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
