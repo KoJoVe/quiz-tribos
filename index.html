@@ -15,7 +15,7 @@
           {{r.resposta}}
         </div>
 
-        <button ng-click="proximaPergunta()">proxima</button>
+        <button ng-click="proximaPergunta()" ng-class="{selecionada: quiz[perguntaAtual].selecionada == $index}" >proxima</button>
 
       </form>
       </div>

@@ -17,5 +17,7 @@
 	position: relative;
 	top: 100px;
 	width: 700px;
+	max-height: 700px;
+	background: blue;
 	margin: auto;
 }
