@@ -1,13 +1,16 @@
 function QuizCtrl($scope){
 
   $scope.perguntaAtual = 0
+  $scope.respostas = []
 
   $scope.atualizaOpcao = function(i){
     $scope.quiz[$scope.perguntaAtual].selecionada = i
   }
 
   $scope.proximaPergunta = function(){
-    alert(  $scope.quiz[$scope.perguntaAtual].selecionada  )
+    alert($scope.quiz[$scope.perguntaAtual].selecionada)
+    $scope.respostas[$scope.perguntaAtual] = $scope.quiz[$scope.perguntaAtual].selecionada
+    $scope.perguntaAtual += 1
   }
 
   $scope.tribos = [

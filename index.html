@@ -4,21 +4,21 @@
   </head>
   
   <body ng-controller="QuizCtrl"> 
-    
-    <form name="quizform">
+    <div class="quizCaixa">  
+      <form name="quizform">
 
-      <div class="pergunta">
-        {{quiz[perguntaAtual].pergunta}}
+        <div class="pergunta">
+          {{quiz[perguntaAtual].pergunta}}
+        </div>
+
+        <div class="opcao" ng-repeat="r in quiz[perguntaAtual].respostas" ng-class="{selecionada: quiz[perguntaAtual].selecionada == $index}" ng-click="atualizaOpcao($index)">
+          {{r.resposta}}
+        </div>
+
+        <button ng-click="proximaPergunta()">proxima</button>
+
+      </form>
       </div>
-
-      <div class="opcao" ng-repeat="r in quiz[perguntaAtual].respostas" ng-class="{selecionada: quiz[perguntaAtual].selecionada == $index}" ng-click="atualizaOpcao($index)">
-        {{r.resposta}}
-      </div>
-
-      <button ng-click="proximaPergunta()">proxima</button>
-
-    </form>
-
     <script src="lib/angular/angular.js"></script>
     <script src="js/app.js"></script>
   </body>

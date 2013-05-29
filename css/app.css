@@ -1,11 +1,21 @@
 .opcao{
-  width: 200px;
-  height: 200px;
-  float: left;
-  border: 1px solid black;
-  margin: 0 20px 20px 0;
+  	max-width: 500px;
+  	max-height: 100px;
+  	border: 1px solid black;
+  	margin: 0 20px 20px 0;
+  	cursor: pointer;
 }
 
 .selecionada{
-  background-color: ddd;
+  	background-color: ddd;
+}
+
+.pergunta {
+	margin-bottom: 10px;
+}
+.quizCaixa {
+	position: relative;
+	top: 100px;
+	width: 700px;
+	margin: auto;
 }
