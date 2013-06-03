@@ -1,4 +1,15 @@
-var app = angular.module('QuizApp', ['mongolabResource'])
+var app = angular.module('QuizApp', ['mongolabResource']);
+
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  $routeProvider.when('/', {
+    templateUrl: 'inicio.html'
+  }).when('/resultados', {
+    templateUrl: 'resultado.html'
+  }).when('/teste', {
+    templateUrl: 'teste.html'
+  });
+  $locationProvider.html5Mode(true);
+}]);
 
 app.constant('API_KEY', 'Mg3dX4xGqwJWmkFJz6AwaDeR8VGuD-2R');
 app.constant('DB_NAME', 'tribos-dev');
@@ -7,17 +18,27 @@ app.factory('Entrada', function($mongolabResource) {
     return $mongolabResource('entradas');
 });
 
-app.controller('QuizCtrl', function($scope, $http, Entrada) {
+app.controller('QuizCtrl', function($scope, $http, $location, Entrada) {
 
   $http.get('/api/dados').success(function(res) {
     $scope.tribos = res.tribos 
     $scope.perguntas = res.perguntas
   })
-
   $scope.perguntaAtual = 0
   $scope.opcoesSelecionadas = [] //atualizada por updateOpcoesSelecionadas
   $scope.triboPontos = [] //atualizada por updateTriboPontos
   $scope.triboPorc = [] //atualizada por updatetriboPorc
+  $scope.resultFinal = [
+    {nome: "", porc: 0},
+    {nome: "", porc: 0},
+    {nome: "", porc: 0},
+    {nome: "", porc: 0},
+    {nome: "", porc: 0},
+    {nome: "", porc: 0},
+    {nome: "", porc: 0},
+    {nome: "", porc: 0},
+    {nome: "", porc: 0},
+  ]
 
   $scope.atualizaOpcao = function(i){
     $scope.perguntas[$scope.perguntaAtual].selecionada = i
@@ -74,8 +95,21 @@ app.controller('QuizCtrl', function($scope, $http, Entrada) {
     $scope.updateOpcoesSelecionadas()
     $scope.updateTriboPontos()
     $scope.updateTriboPorc()
-
+    
     var entrada = new Entrada({session: window.session, opcoes: $scope.opcoesSelecionadas, pontos: $scope.triboPontos, porcentagens: $scope.triboPorc})
     entrada.saveOrUpdate()
+
+    var porc = $scope.triboPorc
+    $scope.ordena(porc)
+    $location.path('/resultados')
+    
+  }
+
+  $scope.ordena = function(porc) {
+    for (var i = 0; i < 9; i++) {
+      $scope.resultFinal[i].nome = $scope.tribos[i].nome
+      $scope.resultFinal[i].porc = porc[i]
+    }
+    $scope.resultFinal.sort(function(a, b) {return b.porc - a.porc})
   }
 })
