@@ -1,13 +1,16 @@
+    <div id="container">
       <form name="quizform">
   
         <div class="pergunta">
           {{perguntas[perguntaAtual].texto}}
         </div>
 
-        <div class="opcao" ng-repeat="r in perguntas[perguntaAtual].respostas" ng-class="{selecionada: perguntas[perguntaAtual].selecionada == $index}" ng-click="atualizaOpcao($index)">
-          {{r.texto}}
-        </div>
+        <div class="opcao" ng-repeat="r in perguntas[perguntaAtual].respostas"  ng-click="atualizaOpcao($index)">
+        	<div class="botao" ng-class="{b_selec: perguntas[perguntaAtual].selecionada == $index}" ></div>
+          	<div class="resposta"><p>{{r.texto}}</p></div>
+      	</div>
 
         <button ng-click="proximaPergunta()" ng-class="{selecionada: perguntas[perguntaAtual].selecionada == $index}" ng-show="perguntas[perguntaAtual].selecionada >= 0">Proxima pergunta</button>
 
       </form>
+  	</div>

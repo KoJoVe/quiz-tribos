@@ -3,13 +3,13 @@
 var data = {
   tribos: [
     {nome: "surfista"},
-    {nome: "patricinha"},
+    {nome: "patricinha mauricinho"},
     {nome: "hippie"},
     {nome: "cult"},
     {nome: "nerd"},
-    {nome: "rockeiro"},
-    {nome: "funkeiro"},
-    {nome: "rato de academia"},
+    {nome: "rockeiro(a)"},
+    {nome: "funkeiro(a)"},
+    {nome: "sarado(a)"},
     {nome: "skatista"},
   ],
   perguntas: [

@@ -1,32 +1,185 @@
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: cyan;
+  background: url('imagens/fundo branco.png') center no-repeat;
 }
+#container {
+  margin: auto;
+  width: 960px;
+  height: 900px;
+  background: url('imagens/fundo novo.png') center no-repeat;
+  background-size: contain;
+  position: relative;
+  top: -150px;
+  left: -120px;
+}
+.botao, .resposta {
+  display: inline-block;
+}
+.pergunta {
+  font-family: 'Amatic SC', cursive;
+  color: white;
+  font-size: 50px;
+}
+.opcao {
+  height: 60px;
+  position: relative;
+  top: 80px;
+}
+.resposta {
+  position: relative;
+  top: -5px;
+  color: white;
+}
+.botao {
+  width: 25px;
+  height: 25px;
+  background: url('imagens/botao.png') center no-repeat;
+}
+button {
+  float: right;
+  position: relative;
+  right: 200px;
+}
+.b_selec {
 
+  background: url('imagens/botao_selecionado.png') center no-repeat;
+}
+form[name="quizform"] {
+  position: relative;
+  top: 110px;
+  left: 80px;
+}
 .quizCaixa  {
   position: relative;
   top: 100px;
   width: 700px;
   max-height: 700px;
   margin: auto;
+  font-family: 'Lao UI';
 }
-
+.numero, .texto {
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+}
+.numero {
+  font-size: 60px;
+}
+.texto {
+  font-size: 30px;
+}
 button {
   cursor: pointer;
 }
-
 .opcao {
-  max-width: 500px;
-  max-height: 100px;
-  border: 1px solid black;
-  margin: 0 20px 20px 0;
+  max-width: 700px;
   cursor: pointer;
 }
-
 .selecionada {
-  background-color: ddd;
+  background-color: #ddd;
 }
+.secundaria, .principal{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+}
+.resultado {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.resultado {
+  text-align: center;
+}
+#resultado1 {
+  top: 150px;
+  right: 220px;
+}
+#resultado1 .resultado {
+  width: 300px;
 
-.pergunta {
-  margin-bottom: 10px;
+}
+#texto_vencedor {
+  width: 60px;
+}
+#texto_vencedor, #imagem_vencedor {
+  display: inline-block;
+}
+#texto_vencedor {
+  text-align: center;
+  position: relative;
+  top: -50px;
+}
+#resultado2 {
+  top: 20px;
+  right: 500px;
+  background: url('imagens/balaoz1.png') no-repeat center;
+}
+#resultado2 .resultado {
+  top: 30%;
+  left: 20%
+}
+#resultado3 {
+  top: -100px;
+  right: 320px;
+  background: url('imagens/balaoz2.png') no-repeat center;
+}
+#resultado3 .resultado {
+  top: 20%;
+  left: 32%
+}
+#resultado4 {
+  top: -100px;
+  right: 80px;
+  background: url('imagens/balaoz3.png') no-repeat center;
+}
+#resultado4 .resultado {
+  top: 20%;
+  left: 32%
+}
+#resultado5 {
+  top: 20px;
+  right: -90px;
+  background: url('imagens/balaoz4.png') no-repeat center;
+}
+#resultado5 .resultado {
+  top: 30%;
+  left: 40%
+}
+#resultado6 {
+  top: 250px;
+  right: -130px;
+  background: url('imagens/balaoz5.png') no-repeat center;
+}
+#resultado6 .resultado {
+  top: 29%;
+  left: 36%
+}
+#resultado7 {
+  top: 320px;
+  right: 65px;
+  background: url('imagens/balaoz6.png') no-repeat center;
+}
+#resultado7 .resultado {
+  top: 40%;
+  left: 32%
+}
+#resultado8 {
+  top: 320px;
+  right: 290px;
+  background: url('imagens/balaoz7.png') no-repeat center;
+}
+#resultado8 .resultado {
+  top: 41%;
+  left: 33%
+}
+#resultado9 {
+  top: 250px;
+  right: 500px;
+  background: url('imagens/balaoz8.png') no-repeat center;
+}
+#resultado9 .resultado {
+  top: 33%;
+  left: 31%
 }

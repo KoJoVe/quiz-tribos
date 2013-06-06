@@ -106,9 +106,11 @@ app.controller('QuizCtrl', function($scope, $http, $location, Entrada) {
   }
 
   $scope.ordena = function(porc) {
-    for (var i = 0; i < 9; i++) {
+    var length = $scope.tribos.length
+    for(var i = 0; i<length; i++) {
       $scope.resultFinal[i].nome = $scope.tribos[i].nome
       $scope.resultFinal[i].porc = porc[i]
+      $scope.resultFinal[i].porc = Math.round($scope.resultFinal[i].porc)
     }
     $scope.resultFinal.sort(function(a, b) {return b.porc - a.porc})
   }
