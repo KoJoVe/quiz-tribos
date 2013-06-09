@@ -1,6 +1,15 @@
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: url('imagens/fundo branco.png') center no-repeat;
+  background: url('imagens/fundo branco.png') center no-repeat black;
+}
+button.prox {
+  font-size: 40px;
+  background: #2A8FD3;
+  border: #459DD9 2px solid;
+  font-family: 'Amatic SC', cursive;
+  color: white;
+  font-weight: bold;
+  min-width: 60px;
 }
 #container {
   margin: auto;
@@ -12,6 +21,14 @@ body {
   top: -150px;
   left: -120px;
 }
+#container_inicio {
+  width: 1000px;
+  height: 730px;
+  background: url('imagens/inicio.png') center no-repeat;
+  position: relative;
+  top: -110px;
+  left: -200px; 
+}
 .botao, .resposta {
   display: inline-block;
 }
@@ -19,6 +36,7 @@ body {
   font-family: 'Amatic SC', cursive;
   color: white;
   font-size: 50px;
+  font-weight: bold;
 }
 .opcao {
   height: 60px;
@@ -35,7 +53,7 @@ body {
   height: 25px;
   background: url('imagens/botao.png') center no-repeat;
 }
-button {
+button.prox {
   float: right;
   position: relative;
   right: 200px;
@@ -88,10 +106,21 @@ button {
   width: 100px;
   height: 100px;
   position: absolute;
+
+}
+.resultado_princ {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+
 }
 .resultado {
   text-align: center;
 }
+.resultado_princ {
+  text-align: center;
+}
+
 #resultado1 {
   top: 150px;
   right: 220px;
@@ -101,85 +130,236 @@ button {
 
 }
 #texto_vencedor {
+  margin-top: 80px;
+  margin-left: 20px;
   width: 60px;
+  font-weight: bold;
+}
+#texto_vencedor .numero {
+  font-size: 70px;
+}
+#texto_vencedor .texto {
+  font-size: 40px;
 }
 #texto_vencedor, #imagem_vencedor {
-  display: inline-block;
+  float: left;
 }
 #texto_vencedor {
   text-align: center;
   position: relative;
   top: -50px;
 }
-#resultado2 {
+.resultado10 {
+  top: 200px;
+  right: 400px;
+  background: url('imagens/balaoz9.png') no-repeat center;
+}
+.resultado2 {
   top: 20px;
   right: 500px;
   background: url('imagens/balaoz1.png') no-repeat center;
 }
-#resultado2 .resultado {
+.resultado2 .resultado {
   top: 30%;
-  left: 20%
+  left: 20%;
 }
-#resultado3 {
+.resultado3 {
   top: -100px;
   right: 320px;
   background: url('imagens/balaoz2.png') no-repeat center;
 }
-#resultado3 .resultado {
-  top: 20%;
-  left: 32%
+.resultado3 .resultado {
+  top: 16%;
+  left: 32%;
 }
-#resultado4 {
+.resultado4 {
   top: -100px;
   right: 80px;
   background: url('imagens/balaoz3.png') no-repeat center;
 }
-#resultado4 .resultado {
-  top: 20%;
-  left: 32%
+.resultado4 .resultado {
+  top: 16%;
+  left: 32%;
 }
-#resultado5 {
+.resultado5 {
   top: 20px;
   right: -90px;
   background: url('imagens/balaoz4.png') no-repeat center;
 }
-#resultado5 .resultado {
-  top: 30%;
-  left: 40%
+.resultado5 .resultado {
+  top: 29%;
+  left: 40%;
 }
-#resultado6 {
+.resultado6 {
   top: 250px;
   right: -130px;
   background: url('imagens/balaoz5.png') no-repeat center;
 }
-#resultado6 .resultado {
-  top: 29%;
-  left: 36%
+.resultado6 .resultado {
+  top: 25%;
+  left: 36%;
 }
-#resultado7 {
+.resultado7 {
   top: 320px;
   right: 65px;
   background: url('imagens/balaoz6.png') no-repeat center;
 }
-#resultado7 .resultado {
-  top: 40%;
-  left: 32%
+.resultado7 .resultado .texto {
+  font-size: 30px;
 }
-#resultado8 {
+.resultado7 .resultado .numero {
+  font-size: 50px;
+}
+.resultado7 .resultado {
+  top: 36%;
+  left: 32%;
+}
+.container_inicio .resultado7 {
+  top: 250px;
+  right: 70px;
+}
+.resultado8 {
   top: 320px;
   right: 290px;
   background: url('imagens/balaoz7.png') no-repeat center;
 }
-#resultado8 .resultado {
+.resultado8 .resultado {
   top: 41%;
-  left: 33%
+  left: 33%;
 }
-#resultado9 {
+.resultado9 {
   top: 250px;
   right: 500px;
   background: url('imagens/balaoz8.png') no-repeat center;
 }
-#resultado9 .resultado {
-  top: 33%;
-  left: 31%
+.resultado9 .resultado {
+  top: 29%;
+  left: 31%;
+}
+.container_inicio .resultado9 {
+  top: 280px;
+  right: 550px;
+  background: url('imagens/balaoz11.png') no-repeat center;  
+}
+.icone {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  position: relative;
+}
+.resultado2 .icone {
+  background: url('imagens/skatista.png') no-repeat center; 
+  background-size: contain;
+  top: 80px;
+  right: 40px;
+}
+.resultado3 .icone {
+  background: url('imagens/cult.png') no-repeat center; 
+  background-size: contain;
+  top: 40px;
+}
+.resultado4 .icone {
+  background: url('imagens/surfista.png') no-repeat center; 
+  background-size: contain;
+  top: 40px;
+  right: 40px;
+}
+.resultado5 .icone {
+  background: url('imagens/hippie.png') no-repeat center; 
+  background-size: contain;
+  top: 70px;
+  left: 20px;
+}
+.resultado6 .icone {
+  background: url('imagens/patricinha mauricinho.png') no-repeat center; 
+  background-size: contain;
+  top: 80px;
+}
+.resultado7 .icone {
+  background: url('imagens/rockeiro(a).png') no-repeat center; 
+  background-size: contain;
+  top: 120px;
+  width: 130px;
+  height: 130px;
+}
+.resultado8 .icone {
+  background: url('imagens/sarado(a).png') no-repeat center; 
+  background-size: contain;
+  top: 110px;
+}
+.resultado9 .icone {
+  background: url('imagens/funkeiro(a).png') no-repeat center; 
+  background-size: contain;
+  top: 100px;
+  right: 10px;
+}
+.resultado10 .icone {
+  background: url('imagens/nerd.png') no-repeat center; 
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  top: 100px;
+  right: 10px;
+}
+.texto_principal .triboT {
+  text-decoration: none;
+  color: black;
+  font-size: 120px;
+  font-weight: bold;
+  line-height: 45px;
+}
+.texto_principal {
+  position: relative;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  top: 210px;
+  left: 260px;
+}
+.minitexto {
+  position: relative;
+  font-size: 45px;
+  left: 60px;
+}
+.inicial {
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+.inicial p.titulo {
+  font-size: 140px;
+  font-family: 'Amatic SC', cursive;
+  line-height: 10px;
+}
+button.inic {
+  margin: auto;
+  font-size: 20px;
+  background: #2A8FD3;
+  border: #459DD9 2px solid;
+  font-family: 'Amatic SC', cursive;
+  color: white;
+  min-width: 60px;
+}
+button.voltar {
+  font-size: 20px;
+  background: #2A8FD3;
+  border: #459DD9 2px solid;
+  font-family: 'Amatic SC', cursive;
+  color: white;
+  min-width: 60px;
+  position: absolute;
+  top: 550px;
+  left: 700px;
+  z-index: 999;
+}
+form#nome_aqui, .inicial p.info, button.inic {
+  position: relative;
+  top: -40px;
+}
+.cover {
+  position: fixed;
+  right: 0px;
+  width: 3000px;
+  height: 1000px;
+  z-index: 99;
+  cursor: pointer;
 }

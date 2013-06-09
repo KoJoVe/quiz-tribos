@@ -2,11 +2,13 @@ var app = angular.module('QuizApp', ['mongolabResource']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.when('/', {
-    templateUrl: 'inicio.html'
+    templateUrl: 'nome.html'
   }).when('/resultados', {
     templateUrl: 'resultado.html'
   }).when('/teste', {
     templateUrl: 'teste.html'
+  }).when('/inicio', {
+    templateUrl: 'inicio.html'
   });
   $locationProvider.html5Mode(true);
 }]);
@@ -39,6 +41,16 @@ app.controller('QuizCtrl', function($scope, $http, $location, Entrada) {
     {nome: "", porc: 0},
     {nome: "", porc: 0},
   ]
+
+  $scope.update = function(usuario) {
+    $scope.usuario = angular.copy(usuario)
+    if($scope.usuario.match(/^[a-zA-Z\s]+$/))
+      $location.path('/inicio')
+  };
+
+  $scope.iniciarTeste = function() {
+     $location.path('/teste')
+  };
 
   $scope.atualizaOpcao = function(i){
     $scope.perguntas[$scope.perguntaAtual].selecionada = i
@@ -103,6 +115,16 @@ app.controller('QuizCtrl', function($scope, $http, $location, Entrada) {
     $scope.ordena(porc)
     $location.path('/resultados')
     
+  }
+
+  $scope.pagInicial = function() {
+    $scope.perguntaAtual = 0
+    $scope.usuario = ""
+    var length = $scope.perguntas.length
+    for(var i = 0; i<length; i++) {
+      $scope.perguntas[i].selecionada = -1
+    }
+    $location.path('/')
   }
 
   $scope.ordena = function(porc) {
