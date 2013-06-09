@@ -26,7 +26,6 @@ app.configure('production', function(){
 
 app.get('/api/dados', api.dados)
 
-
 //Start
 
 app.listen(3000, function() {

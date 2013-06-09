@@ -10,7 +10,7 @@
           	<div class="resposta"><p>{{r.texto}}</p></div>
       	</div>
 
-        <button ng-click="proximaPergunta()" ng-class="{selecionada: perguntas[perguntaAtual].selecionada == $index}" ng-show="perguntas[perguntaAtual].selecionada >= 0">Proxima pergunta</button>
+        <button class="prox" ng-click="proximaPergunta()" ng-class="{selecionada: perguntas[perguntaAtual].selecionada == $index}" ng-show="perguntas[perguntaAtual].selecionada >= 0">>></button>
 
       </form>
   	</div>
