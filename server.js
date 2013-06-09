@@ -1,7 +1,7 @@
 //Dependencies
 
 var express = require('express')
-var api = require('./routes/api')
+var api = require('./api')
 
 var app = module.exports = express()
 
@@ -9,6 +9,8 @@ var app = module.exports = express()
 //Config
 
 app.configure(function() {
+  app.set('port', process.env.PORT || 3000)
+  app.use(express.bodyParser())
   app.use(express.static(__dirname + '/public'))
   app.use(app.router)
 })
@@ -25,13 +27,10 @@ app.configure('production', function(){
 //Routes
 
 app.get('/api/dados', api.dados)
-
-//Port
-
-var port = process.env.PORT || 3000
+app.post('/api/entradas', api.entradas)
 
 //Start!
 
-app.listen(port, function() {
+app.listen(app.get('port'), function() {
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env)
 })

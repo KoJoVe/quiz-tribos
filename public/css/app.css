@@ -1,8 +1,20 @@
+@font-face {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amatic SC Regular'), local('AmaticSC-Regular'), url('/fonts/AmaticSC.woff') format('woff');
+}
+
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: url('imagens/fundo branco.png') center no-repeat black;
+  background: url('/img/fundo branco.png') center no-repeat black;
 }
-button.prox {
+
+button {
+  cursor: pointer;
+}
+
+.prox {
   font-size: 40px;
   background: #2A8FD3;
   border: #459DD9 2px solid;
@@ -11,62 +23,72 @@ button.prox {
   font-weight: bold;
   min-width: 60px;
 }
+
 #container {
   margin: auto;
   width: 960px;
   height: 900px;
-  background: url('imagens/fundo novo.png') center no-repeat;
+  background: url('/img/fundo novo.png') center no-repeat;
   background-size: contain;
   position: relative;
   top: -150px;
   left: -120px;
 }
+
 #container_inicio {
   width: 1000px;
   height: 730px;
-  background: url('imagens/inicio.png') center no-repeat;
+  background: url('/img/inicio.png') center no-repeat;
   position: relative;
   top: -110px;
   left: -200px; 
 }
+
 .botao, .resposta {
   display: inline-block;
 }
+
 .pergunta {
   font-family: 'Amatic SC', cursive;
   color: white;
   font-size: 50px;
   font-weight: bold;
 }
+
 .opcao {
   height: 60px;
   position: relative;
   top: 80px;
 }
+
 .resposta {
   position: relative;
   top: -5px;
   color: white;
 }
+
 .botao {
   width: 25px;
   height: 25px;
-  background: url('imagens/botao.png') center no-repeat;
+  background: url('/img/botao.png') center no-repeat;
 }
-button.prox {
+
+.prox {
   float: right;
   position: relative;
   right: 200px;
 }
-.b_selec {
 
-  background: url('imagens/botao_selecionado.png') center no-repeat;
+.b_selec {
+  background: url('/img/botao_selecionado.png') center no-repeat;
 }
-form[name="quizform"] {
+
+.quiz {
   position: relative;
   top: 110px;
   left: 80px;
 }
+
 .quizCaixa  {
   position: relative;
   top: 100px;
@@ -75,26 +97,25 @@ form[name="quizform"] {
   margin: auto;
   font-family: 'Lao UI';
 }
+
 .numero, .texto {
   font-family: 'Amatic SC', cursive;
   font-weight: bold;
 }
+
 .numero {
   font-size: 60px;
 }
+
 .texto {
   font-size: 30px;
 }
-button {
-  cursor: pointer;
-}
+
 .opcao {
   max-width: 700px;
   cursor: pointer;
 }
-.selecionada {
-  background-color: #ddd;
-}
+
 .secundaria, .principal{
   position: absolute;
   top: 0;
@@ -102,205 +123,248 @@ button {
   width: 300px;
   height: 300px;
 }
+
 .resultado {
   width: 100px;
   height: 100px;
   position: absolute;
 
 }
+
 .resultado_princ {
   width: 300px;
   height: 100px;
   position: absolute;
 
 }
+
 .resultado {
   text-align: center;
 }
+
 .resultado_princ {
   text-align: center;
 }
+
 
 #resultado1 {
   top: 150px;
   right: 220px;
 }
+
 #resultado1 .resultado {
   width: 300px;
 
 }
+
 #texto_vencedor {
   margin-top: 80px;
   margin-left: 20px;
   width: 60px;
   font-weight: bold;
 }
+
 #texto_vencedor .numero {
   font-size: 70px;
 }
+
 #texto_vencedor .texto {
   font-size: 40px;
 }
+
 #texto_vencedor, #imagem_vencedor {
   float: left;
 }
+
 #texto_vencedor {
   text-align: center;
   position: relative;
   top: -50px;
 }
+
 .resultado10 {
   top: 200px;
   right: 400px;
-  background: url('imagens/balaoz9.png') no-repeat center;
+  background: url('/img/balaoz9.png') no-repeat center;
 }
+
 .resultado2 {
   top: 20px;
   right: 500px;
-  background: url('imagens/balaoz1.png') no-repeat center;
+  background: url('/img/balaoz1.png') no-repeat center;
 }
+
 .resultado2 .resultado {
   top: 30%;
   left: 20%;
 }
+
 .resultado3 {
   top: -100px;
   right: 320px;
-  background: url('imagens/balaoz2.png') no-repeat center;
+  background: url('/img/balaoz2.png') no-repeat center;
 }
+
 .resultado3 .resultado {
   top: 16%;
   left: 32%;
 }
+
 .resultado4 {
   top: -100px;
   right: 80px;
-  background: url('imagens/balaoz3.png') no-repeat center;
+  background: url('/img/balaoz3.png') no-repeat center;
 }
+
 .resultado4 .resultado {
   top: 16%;
   left: 32%;
 }
+
 .resultado5 {
   top: 20px;
   right: -90px;
-  background: url('imagens/balaoz4.png') no-repeat center;
+  background: url('/img/balaoz4.png') no-repeat center;
 }
+
 .resultado5 .resultado {
   top: 29%;
   left: 40%;
 }
+
 .resultado6 {
   top: 250px;
   right: -130px;
-  background: url('imagens/balaoz5.png') no-repeat center;
+  background: url('/img/balaoz5.png') no-repeat center;
 }
+
 .resultado6 .resultado {
   top: 25%;
   left: 36%;
 }
+
 .resultado7 {
   top: 320px;
   right: 65px;
-  background: url('imagens/balaoz6.png') no-repeat center;
+  background: url('/img/balaoz6.png') no-repeat center;
 }
+
 .resultado7 .resultado .texto {
   font-size: 30px;
 }
+
 .resultado7 .resultado .numero {
   font-size: 50px;
 }
+
 .resultado7 .resultado {
   top: 36%;
   left: 32%;
 }
+
 .container_inicio .resultado7 {
   top: 250px;
   right: 70px;
 }
+
 .resultado8 {
   top: 320px;
   right: 290px;
-  background: url('imagens/balaoz7.png') no-repeat center;
+  background: url('/img/balaoz7.png') no-repeat center;
 }
+
 .resultado8 .resultado {
   top: 41%;
   left: 33%;
 }
+
 .resultado9 {
   top: 250px;
   right: 500px;
-  background: url('imagens/balaoz8.png') no-repeat center;
+  background: url('/img/balaoz8.png') no-repeat center;
 }
+
 .resultado9 .resultado {
   top: 29%;
   left: 31%;
 }
+
 .container_inicio .resultado9 {
   top: 280px;
   right: 550px;
-  background: url('imagens/balaoz11.png') no-repeat center;  
+  background: url('/img/balaoz11.png') no-repeat center;  
 }
+
 .icone {
   width: 150px;
   height: 150px;
   margin: auto;
   position: relative;
 }
+
 .resultado2 .icone {
-  background: url('imagens/skatista.png') no-repeat center; 
+  background: url('/img/skatista.png') no-repeat center; 
   background-size: contain;
   top: 80px;
   right: 40px;
 }
+
 .resultado3 .icone {
-  background: url('imagens/cult.png') no-repeat center; 
+  background: url('/img/cult.png') no-repeat center; 
   background-size: contain;
   top: 40px;
 }
+
 .resultado4 .icone {
-  background: url('imagens/surfista.png') no-repeat center; 
+  background: url('/img/surfista.png') no-repeat center; 
   background-size: contain;
   top: 40px;
   right: 40px;
 }
+
 .resultado5 .icone {
-  background: url('imagens/hippie.png') no-repeat center; 
+  background: url('/img/hippie.png') no-repeat center; 
   background-size: contain;
   top: 70px;
   left: 20px;
 }
+
 .resultado6 .icone {
-  background: url('imagens/patricinha mauricinho.png') no-repeat center; 
+  background: url('/img/patricinha mauricinho.png') no-repeat center; 
   background-size: contain;
   top: 80px;
 }
+
 .resultado7 .icone {
-  background: url('imagens/rockeiro(a).png') no-repeat center; 
+  background: url('/img/rockeiro(a).png') no-repeat center; 
   background-size: contain;
   top: 120px;
   width: 130px;
   height: 130px;
 }
+
 .resultado8 .icone {
-  background: url('imagens/sarado(a).png') no-repeat center; 
+  background: url('/img/sarado(a).png') no-repeat center; 
   background-size: contain;
   top: 110px;
 }
+
 .resultado9 .icone {
-  background: url('imagens/funkeiro(a).png') no-repeat center; 
+  background: url('/img/funkeiro(a).png') no-repeat center; 
   background-size: contain;
   top: 100px;
   right: 10px;
 }
+
 .resultado10 .icone {
-  background: url('imagens/nerd.png') no-repeat center; 
+  background: url('/img/nerd.png') no-repeat center; 
   background-size: contain;
   width: 100px;
   height: 100px;
   top: 100px;
   right: 10px;
 }
+
 .texto_principal .triboT {
   text-decoration: none;
   color: black;
@@ -308,6 +372,7 @@ button {
   font-weight: bold;
   line-height: 45px;
 }
+
 .texto_principal {
   position: relative;
   font-family: 'Amatic SC', cursive;
@@ -315,22 +380,26 @@ button {
   top: 210px;
   left: 260px;
 }
+
 .minitexto {
   position: relative;
   font-size: 45px;
   left: 60px;
 }
+
 .inicial {
   text-align: center;
   position: relative;
   top: 100px;
 }
+
 .inicial p.titulo {
   font-size: 140px;
   font-family: 'Amatic SC', cursive;
   line-height: 10px;
 }
-button.inic {
+
+.inic {
   margin: auto;
   font-size: 20px;
   background: #2A8FD3;
@@ -339,7 +408,8 @@ button.inic {
   color: white;
   min-width: 60px;
 }
-button.voltar {
+
+.voltar {
   font-size: 20px;
   background: #2A8FD3;
   border: #459DD9 2px solid;
@@ -351,10 +421,13 @@ button.voltar {
   left: 700px;
   z-index: 999;
 }
-form#nome_aqui, .inicial p.info, button.inic {
+
+
+#nome, .inicial p.info, .inic {
   position: relative;
   top: -40px;
 }
+
 .cover {
   position: fixed;
   right: 0px;

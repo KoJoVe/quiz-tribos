@@ -1,14 +1,17 @@
 <div class="container_resultados">
+
 	<div class="principal" id="resultado1"> 
 		<div class="resultado_princ">
 			<div id="imagem_vencedor">
-				<img src='css/imagens/{{resultFinal[0].nome}}.png' />
+				<img ng-src='/img/{{resultFinal[0].nome}}.png' />
 			</div>
 			<div id="texto_vencedor">
 				<span class="numero">{{resultFinal[0].porc}}%</span>  <span class="texto">{{resultFinal[0].nome}}</span> 
 			</div> 
 		</div>
 	</div>
+	
+	<!-- TODO: shame -->
 	<div class="secundaria resultado2"> 
 		<div class="resultado"><span class="numero">{{resultFinal[1].porc}}%</span></br> 
 			<span class="texto">{{resultFinal[1].nome}}</span> 
@@ -49,5 +52,6 @@
 			<span class="texto">{{resultFinal[8].nome}}</span> 
 		</div>
 	</div>
+
 </div>
-	<button ng-click="pagInicial()" class="voltar">Voltar</button>
+<a ng-click="init()" href="/" class="voltar">Voltar</a>
